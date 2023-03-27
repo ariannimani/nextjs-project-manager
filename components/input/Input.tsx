@@ -20,12 +20,15 @@ const Input: FC<InputProps> = ({
 }) => {
   return (
     <input
-      required
+      required={required}
+      placeholder={placeholder}
+      value={value}
       type={type}
       className={clsx(
         "border-solid border-gray border-2 px-6 py-2 text-lg rounded-3xl w-full",
         className
       )}
+      onChange={onChange}
     />
   );
 };
