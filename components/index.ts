@@ -5,3 +5,5 @@ export { default as Input } from "./input/Input";
 export { default as Sidebar } from "./sidebar/Sidebar";
 export { default as SidebarLink } from "./sidebar-link/SidebarLink";
 export { default as AuthForm } from "./auth-form/AuthForm";
+export { default as Greetings } from "./greetings/Greetings";
+export { default as ProjectCard } from "./project-card/ProjectCard";
