@@ -3,7 +3,7 @@ import { FC, ReactNode } from "react";
 
 interface CardProps {
   children: ReactNode;
-  className: string;
+  className?: string;
 }
 
 const Card: FC<CardProps> = ({ className, children }) => {
