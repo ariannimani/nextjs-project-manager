@@ -7,7 +7,7 @@ import { Button, Card, Input } from "@/components";
 import Link from "next/link";
 
 const registerContent = {
-  linkUrl: "/signIn",
+  linkUrl: "/signin",
   linkText: "Already have an account?",
   header: "Create a new account",
   subheader: "Just a few things to get started",
