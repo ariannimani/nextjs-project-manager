@@ -3,7 +3,6 @@ import SidebarLink from "../sidebar-link/SidebarLink";
 
 export interface LinkProps {
   label: string;
-  //FIXME: fix any type
   icon: any;
   link: string;
 }

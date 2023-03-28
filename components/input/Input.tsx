@@ -2,8 +2,8 @@ import clsx from "clsx";
 import { ChangeEvent, FC } from "react";
 
 interface InputProps {
-  className: string;
-  required: boolean;
+  className?: string;
+  required?: boolean;
   type?: string;
   placeholder: string;
   value: string;

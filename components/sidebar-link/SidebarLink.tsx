@@ -10,7 +10,6 @@ interface SideBarLinkProps {
   link: LinkProps;
 }
 
-//FIXME: fix any
 const icons: any = { Settings, User, Grid, Calendar };
 
 const SidebarLink: FC<SideBarLinkProps> = ({ link }) => {

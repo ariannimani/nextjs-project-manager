@@ -1,6 +1,7 @@
 import bcrypt from "bcrypt";
 import { SignJWT, jwtVerify } from "jose";
 import { db } from "./db";
+import { UserProps } from "./types";
 
 export const hashPassword = (password: string | Buffer) =>
   bcrypt.hash(password, 10);
@@ -10,8 +11,7 @@ export const comparePasswords = (
   hashedPassword: string
 ) => bcrypt.compare(plainTextPassword, hashedPassword);
 
-//FIXME: fix any type
-export const createJWT = (user: any) => {
+export const createJWT = (user: UserProps) => {
   // return jwt.sign({ id: user.id }, 'cookies')
   const iat = Math.floor(Date.now() / 1000);
   const exp = iat + 60 * 60 * 24 * 7;
@@ -24,8 +24,7 @@ export const createJWT = (user: any) => {
     .sign(new TextEncoder().encode(process.env.JWT_SECRET));
 };
 
-//FIXME: fix any type
-export const validateJWT = async (jwt: any) => {
+export const validateJWT = async (jwt: string) => {
   const { payload } = await jwtVerify(
     jwt,
     new TextEncoder().encode(process.env.JWT_SECRET)
@@ -34,7 +33,6 @@ export const validateJWT = async (jwt: any) => {
   return payload.payload as any;
 };
 
-//FIXME: fix any type
 export const getUserFromCookie = async (cookies: any) => {
   const jwt = cookies.get(process.env.COOKIE_NAME);
 

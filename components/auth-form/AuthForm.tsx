@@ -29,9 +29,7 @@ export default function AuthForm({ mode }: { mode: "register" | "signIn" }) {
 
   const router = useRouter();
 
-  const handleSubmit =
-    // useCallback(
-    //FIXME: fix any type
+  const handleSubmit = useCallback(
     async (e: any) => {
       e.preventDefault();
 
@@ -49,10 +47,10 @@ export default function AuthForm({ mode }: { mode: "register" | "signIn" }) {
       } finally {
         setFormState({ ...initialState });
       }
-    };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  //   [formState]
-  // );
+    },
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+    [formState]
+  );
 
   const content = mode === "register" ? registerContent : signInContent;
 

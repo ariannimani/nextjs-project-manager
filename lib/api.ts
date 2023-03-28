@@ -1,3 +1,5 @@
+import { UserPropsWithoutId } from "./types";
+
 type FetcherOptions = {
   url: string;
   method: "GET" | "POST" | "PUT" | "DELETE";
@@ -25,12 +27,18 @@ export const fetcher = async ({
   }
 };
 
-//FIXME: any type
-export const register = (user: any) => {
+export const register = (user: UserPropsWithoutId) => {
   return fetcher({ url: "/api/register", method: "POST", body: user });
 };
 
-//FIXME: any type
-export const signIn = (user: any) => {
+export const signIn = (user: UserPropsWithoutId) => {
   return fetcher({ url: "/api/signIn", method: "POST", body: user });
+};
+
+export const createNewProject = (name: string) => {
+  return fetcher({
+    url: "/api/project",
+    method: "POST",
+    body: { name },
+  });
 };

@@ -7,3 +7,5 @@ export { default as SidebarLink } from "./sidebar-link/SidebarLink";
 export { default as AuthForm } from "./auth-form/AuthForm";
 export { default as Greetings } from "./greetings/Greetings";
 export { default as ProjectCard } from "./project-card/ProjectCard";
+export { default as GreetingsSkeleton } from "./greetings-skeleton/GreetingsSkeleton";
+export { default as TaskCard } from "./task-card/TaskCard";
